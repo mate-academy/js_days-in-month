@@ -4,19 +4,18 @@ function validate (num) {
 
 function daysInMonth (month, year) {
   const promise = new Promise ((resolve, reject) => {
-    if (validate(month) && validate(year) && month >= 1 && month <= 12) {
-      resolve({month, year});
-    } else {
-      reject('exception');
-    }
+    validate(month) && validate(year) && month >= 1 && month <= 12 ? 
+    resolve({month, year}) :
+    reject('exception');
   });
 
-  promise.then(
+  promise
+  .then(
     obj => {
       console.log(32 - new Date(obj.year, obj.month - 1, 32).getDate());
-     },
-    error => console.log(error)
-  );
+    },
+  )
+  .catch(error => console.log(error));
 }
 
 daysInMonth(5, 2019); // 31
