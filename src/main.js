@@ -1,6 +1,6 @@
 function daysInMonth(month, year) {
   try {
-    if (!Number.isInteger(year) || !Number.isInteger(month) || month > 12) {
+    if (!Number.isInteger(year) || !month || !Number.isInteger(month) || month > 12) {
       throw new Error("Incorrect data: false date passed");
     }
         
@@ -17,3 +17,4 @@ daysInMonth(2, 2020); // 29
 daysInMonth(2.2, 2020); // exception
 daysInMonth(2, 2100); // 28
 daysInMonth(13, 2100); // exception
+daysInMonth(0, 2019); // exception
