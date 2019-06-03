@@ -1,21 +1,25 @@
-function validate (num) {
-  return typeof(num) === 'number' && Number.isInteger(num);
+function validate(num) {
+  return typeof (num) === 'number' && Number.isInteger(num);
 }
 
-function daysInMonth (month, year) {
-  const promise = new Promise ((resolve, reject) => {
-    validate(month) && validate(year) && month >= 1 && month <= 12 ? 
-    resolve({month, year}) :
-    reject('exception');
+function daysInMonth(month, year) {
+  const promise = new Promise(resolve => {
+    if(validate(month) && validate(year) && month >= 1 && month <= 12) {
+      resolve({ month, year })
+    } else {
+      throw new Error('exception');
+    }
   });
 
   promise
-  .then(
-    obj => {
-      console.log(32 - new Date(obj.year, obj.month - 1, 32).getDate());
-    },
-  )
-  .catch(error => console.log(error));
+    .then(
+      obj => {
+        const { year, month } = obj;
+        const daysInMonth = 32 - new Date(year, month - 1, 32).getDate();
+        console.log(daysInMonth)
+      },
+    )
+    .catch(error => console.log(error));
 }
 
 daysInMonth(5, 2019); // 31
