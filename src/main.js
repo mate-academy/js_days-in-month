@@ -1,4 +1,4 @@
-function getDaysInMonth(year, month) {
+function getDaysInMonth(month, year) {
   try {
     if (!Number.isInteger(year) && Number.isInteger(month) && month <= 12) {
       throw new Error('incorrrect');
