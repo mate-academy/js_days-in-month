@@ -3,7 +3,7 @@
 function daysInMonth(month, year) {
     if (Number.isInteger(year)
         &&Number.isInteger(month)
-        &&month >= 0
+        &&month > 0
         &&month <= 12) {
         return console.log(new Date(year, month, 0 ).getDate());
     } else {
