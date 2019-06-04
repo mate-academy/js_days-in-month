@@ -1,15 +1,10 @@
 
 
 function daysInMonth(month, year) {
-    try {
-        if (month > 12 || month <= 0 || !Number.isInteger(month) || !Number.isInteger(year)){
-            throw new Error();
-        }
-        console.log(new Date(year, month, 0).getDate());
-    } catch (error) {
-        console.log('exception');
+    if (month > 12 || month <= 0 || !Number.isInteger(month) || !Number.isInteger(year)){
+        return  new Error('exception');
     }
-
+    return new Date(year, month, 0).getDate();
 }
 
 daysInMonth(5, 2019); // 31
