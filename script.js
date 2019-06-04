@@ -3,11 +3,11 @@ function validate(num) {
 }
 
 function daysInMonth(month, year) {
-  const promise = new Promise(resolve => {
+  const promise = new Promise((resolve, reject) => {
     if(validate(month) && validate(year) && month >= 1 && month <= 12) {
       resolve({ month, year })
     } else {
-      throw new Error('exception');
+      reject(new Error('exception'));
     }
   });
 
