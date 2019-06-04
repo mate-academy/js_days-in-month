@@ -1,6 +1,6 @@
 function daysInMonth(month, year) {
   try {
-    if (!Number.isInteger(year) || !month || !Number.isInteger(month) || month > 12) {
+    if (!Number.isInteger(year) || month <= 0 || !Number.isInteger(month) || month > 12) {
       throw new Error("Incorrect data: false date passed");
     }
         
