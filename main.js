@@ -1,11 +1,15 @@
 'use strict';
 
 function daysInMonth(month, year) {
-  if (Number.isInteger(year) && Number.isInteger(month) && month <= 12) {
-    console.log(new Date(year, month, 0).getDate());
-  } else {
-    console.log('exception');
-  }
+  try{
+    if (Number.isInteger(year) && Number.isInteger(month) && month <= 12 && month > 0){
+      console.log(new Date(year, month, 0).getDate());
+    }
+    throw new Error('exception') ;
+  
+  }catch (e) {
+    console.log(e);
+ }
 };
 
 daysInMonth(5, 2019); // 31
