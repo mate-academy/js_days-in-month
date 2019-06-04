@@ -1,24 +1,14 @@
-function daysInMonth(month,year) {
-  try {
+function daysInMonth(month, year) {
+
     if (!Number.isInteger(year) || !Number.isInteger(month) || month > 12) {
-      throw new SyntaxError ('exeption');
+      throw new Error('exeption');
     }
     let daysInFeb = new Date(year, 1, 29).getDate();
-    if (daysInFeb === 29) {
-        const leapYear = [31,29,31,30,31,30,31,31,30,31,30,31];
-        return leapYear[month - 1];
+    if (daysInFeb === 29 && month === 2) {
+      return 29;
     } else {
-      const noleapYear = [31,28,31,30,31,30,31,31,30,31,30,31];
-      return noleapYear[month - 1];
-    }    
-  } catch(e) {
-    console.log(e.message);
-  } 
+      const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      return daysInMonth[month - 1];
+    }
 }
 
-daysInMonth(5, 2019); // 31
-daysInMonth(5, '2019'); // exception
-daysInMonth(2, 2020); // 29
-daysInMonth(2.2, 2020); // exception
-daysInMonth(2, 2100); // 28
-daysInMonth(13, 2100); // exception
