@@ -1,5 +1,5 @@
 function getDaysInMonth(month, year) {
-    if (!Number.isInteger(year) || month < 0 || !Number.isInteger(month) || month > 12) {
+    if (!Number.isInteger(year) || !Number.isInteger(month) || month < 0 || month > 12) {
       throw new Error("Incorrect data");
     }
     return new Date(year, month, 0).getDate();
@@ -16,7 +16,7 @@ function catchWrapper(f) {
   }
 }
 
-let daysInMonth = catchWrapper(getDaysInMonth);
+const daysInMonth = catchWrapper(getDaysInMonth);
 
 daysInMonth(5, 2019); // 31
 daysInMonth(5, '2019'); // exception
