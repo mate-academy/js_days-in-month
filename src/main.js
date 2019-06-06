@@ -1,6 +1,7 @@
+"use strict"
 function getDaysInMonth(month, year) {
   try {
-    if (Number.isInteger(year) && Number.isInteger(month) && month  <= 12) {
+    if (Number.isInteger(year) && Number.isInteger(month) && (month >= 1 && month <= 12)) {
       let daysInMonth = 33 - new Date(year, month - 1, 33).getDate();
       return daysInMonth;
     } else {
