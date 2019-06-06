@@ -3,12 +3,12 @@
 function daysInMonth(month, year) {
   try{
     if (Number.isInteger(year) && Number.isInteger(month) && month <= 12 && month > 0){
-      console.log(new Date(year, month, 0).getDate());
+      return new Date(year, month, 0).getDate();
     }
     throw new Error('exception') ;
   
   }catch (e) {
-    console.log(e);
+    return e;
  }
 };
 
