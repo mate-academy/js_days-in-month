@@ -1,3 +1,5 @@
+"use strict"
+
 function daysInMonth(month, year) {
   try {
     return daysAmountInMonth(month, year);
