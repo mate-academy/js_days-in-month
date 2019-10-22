@@ -19,14 +19,14 @@ function daysInMonth(month, year) {
 }
 
 function isCorrectMonth(month) {
-  if (typeof month === 'number' && Number.isInteger(month) && month > 0 && month < 13) {
+  if (Number.isInteger(month) && month > 0 && month < 13) {
     return true;
   }
   return false;
 }
 
 function isCorrectYear(year) {
-  if (typeof year === 'number' && Number.isInteger(year)) {
+  if (Number.isInteger(year)) {
     return true;
   }
   return false;
