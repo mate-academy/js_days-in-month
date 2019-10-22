@@ -1,14 +1,14 @@
-function daysInMonth(month, year) {    
-    try {
-        if (Number.isInteger(year) && Number.isInteger(month) && month > 0 && month < 13) {
-            return new Date(year, month, 0).getDate()
-        }
-        throw new Error();
-    } catch (e) {
-        return 'exception!'
+function daysInMonth(month, year) {
+  try {
+    if (Number.isInteger(year) && Number.isInteger(month) && month > 0 && month < 13) {
+      return new Date(year, month, 0).getDate()
     }
+    throw new Error();
+  } catch (e) {
+    return 'exception!'
+  }
 }
- 
+
 
 daysInMonth(5, 2019); // 31
 daysInMonth(5, '2019'); // exception
