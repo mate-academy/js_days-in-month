@@ -1,19 +1,7 @@
 function daysInMonth(month, year) {    
     try {
-        if (year === Number || Number.isInteger(year)) {
-            if (month === Number || Number.isInteger(month)) {
-                if (month > 0 && month < 13) {
-                    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-                        if (month ===2) {
-                            return 29;
-                        }
-                    } else if (month === 2) {
-                        return 28;
-                    } else {
-                        return month % 2 === 0 ? 30 : 31;   
-                    }
-                }
-            }
+        if (Number.isInteger(year) && Number.isInteger(month) && month > 0 && month < 13) {
+            return new Date(year, month, 0).getDate()
         }
         throw new Error();
     } catch (e) {
