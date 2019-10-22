@@ -19,17 +19,11 @@ function daysInMonth(month, year) {
 }
 
 function isCorrectMonth(month) {
-  if (Number.isInteger(month) && month > 0 && month < 13) {
-    return true;
-  }
-  return false;
+  return (Number.isInteger(month) && month > 0 && month < 13);
 }
 
 function isCorrectYear(year) {
-  if (Number.isInteger(year)) {
-    return true;
-  }
-  return false;
+  return (Number.isInteger(year));
 }
 
 function isLeapYear(year) {
