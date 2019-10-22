@@ -19,7 +19,7 @@ function daysInMonth(month, year){
       case 9:
       case 11:
 
-        return 31;
+        return 30;
       case 2: {
 
         return (year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0)) ? 29 : 28;
