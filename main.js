@@ -1,21 +1,20 @@
 daysInMonth = function(month, year) {
-    try {
-        if (!Number.isInteger(year) || year <= 0) {
-            throw new TypeError('year is not valid');
-        }
-        if (!Number.isInteger(month) || month <= 0 || month > 12) {
-            throw new TypeError('month is not valid');
-        }
-        return new Date(year, month, 0).getDate();
+  try {
+    if (!Number.isInteger(year) || year <= 0) {
+      throw new TypeError('year is not valid');
     }
-    catch (err){
-        if (err.name === 'TypeError') {
-            console.log(err.message);
-        } else {
-            throw err;
-        }
+    if (!Number.isInteger(month) || month <= 0 || month > 12) {
+      throw new TypeError('month is not valid');
     }
-
+    return new Date(year, month, 0).getDate();
+  }
+  catch (err){
+    if (err.name === 'TypeError') {
+      console.log(err.message);
+    } else {
+      throw err;
+    }
+  }
 };
 
 daysInMonth(5, 2019); // 31
