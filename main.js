@@ -9,6 +9,6 @@ function daysInMonth (month, year) {
 
   } catch (err) {
     err.message = 'INPUT EXCEPTION';
-    throw err;
+    return err.message;
   }
 }
