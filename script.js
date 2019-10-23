@@ -1,7 +1,6 @@
 function daysInMonth(month, year) {
   const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  let yearIsLeap;
-
+  
   try {
     if (!Number.isInteger(month) || !Number.isInteger(year) ||
       Number(month) <= 0 || Number(year) <= 0 || Number(month) > 12) {
