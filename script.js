@@ -10,7 +10,7 @@ function daysInMonth(month, year) {
     
     return days;
     
-  } catch {
+  } catch(error) {
     return `exception`;
   }
 }
