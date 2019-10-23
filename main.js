@@ -6,7 +6,7 @@ function daysInMonth(month, year) {
       throw new Error();
     }
     return new Date(year, month, 0).getDate();
-  } catch {
+  } catch(error) {
     return 'exception';
   }
 }
