@@ -1,16 +1,12 @@
+'use strict'
+
 function daysInMonth(month, year) {
-  const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  
   try {
     if (!Number.isInteger(month) || !Number.isInteger(year) ||
       Number(month) <= 0 || Number(year) <= 0 || Number(month) > 12) {
       throw new Error();
-    }
-
-    if (month !== 2) {
-      return days[month - 1];
     } else {
-      return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0) ? 29 : 28;
+      return new Date(year, month, 0).getDate();
     }
   } catch (error) {
     return 'exception';
