@@ -2,34 +2,10 @@
 
 function daysInMonth(month,year) {
   try {
-    let listDays =  {
-      1 : 31,
-      3: 31,
-      4 : 30,
-      5 : 31,
-      6 : 30,
-      7 : 31,
-      8 : 31,
-      9 : 30,
-      10 : 31,
-      11 : 30,
-      12 : 31,
-    }
-    if (!Number.isInteger(year) || !Number.isInteger(month)) {
+    if (!Number.isInteger(year) || !Number.isInteger(month) || month > 12 || month < 1) {
       throw new Error();
     }
-    if (month > 12 || month < 1) {
-      throw new Error();
-    }
-    if (month == 2) {
-      if ((year % 4) === 0 && (year % 100) !== 0 || year % 400 === 0) {
-        return 29;
-      } else {
-        return 28;
-      }
-    } else {
-      return listDays[month];
-    }
+    return new Date(year,month,0).getDate();
   } catch (e) {
     return 'exception';
   }
