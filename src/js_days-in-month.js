@@ -3,7 +3,8 @@
 function daysInMonth(month, year) {
 
   try {
-    if (!Number.isInteger(year) || !Number.isInteger(month) || month > 12) {
+    if (!Number.isInteger(year) || !Number.isInteger(month) 
+    || month > 12 || month <= 0) {
       throw new Error('exception');
     }
 
