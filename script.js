@@ -3,11 +3,10 @@
 function daysInMonth(month, year) {
   try {
     if (!Number.isInteger(month) || !Number.isInteger(year) ||
-      Number(month) <= 0 || Number(year) <= 0 || Number(month) > 12) {
+      month <= 0 || year <= 0 || month > 12) {
       throw new Error();
-    } else {
-      return new Date(year, month, 0).getDate();
     }
+    return new Date(year, month, 0).getDate();
   } catch (error) {
     return 'exception';
   }
